@@ -9,7 +9,7 @@
   </parent>
   <groupId>org.exoplatform.calendar</groupId>
   <artifactId>calendar</artifactId>
-  <version>5.0.x-SNAPSHOT</version>
+  <version>5.0.x-enterprise-skin-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Calendar</name>
   <description>eXo Calendar application</description>
@@ -47,9 +47,9 @@
     <org.exoplatform.jcr.version>5.0.x-SNAPSHOT</org.exoplatform.jcr.version>
     <org.exoplatform.gatein.portal.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.portal.version>
     <org.exoplatform.gatein.wci.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.wci.version>
-    <org.exoplatform.commons.version>5.0.x-SNAPSHOT</org.exoplatform.commons.version>
-    <org.exoplatform.social.version>5.0.x-SNAPSHOT</org.exoplatform.social.version>
-    <org.exoplatform.platform-ui.version>5.0.x-SNAPSHOT</org.exoplatform.platform-ui.version>
+    <org.exoplatform.commons.version>5.0.x-enterprise-skin-SNAPSHOT</org.exoplatform.commons.version>
+    <org.exoplatform.social.version>5.0.x-enterprise-skin-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.platform-ui.version>5.0.x-enterprise-skin-SNAPSHOT</org.exoplatform.platform-ui.version>
     <org.exoplatform.doc.doc-style.version>5.0.x-SNAPSHOT</org.exoplatform.doc.doc-style.version>
   </properties>
   <dependencyManagement>
