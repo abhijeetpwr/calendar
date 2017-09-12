@@ -791,4 +791,31 @@ public class Event extends AbstractModel {
     }
     return status;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Event)) return false;
+
+    Event event = (Event) o;
+
+    if (isPrivate != event.isPrivate) return false;
+    if (eventCategoryId != null ? !eventCategoryId.equals(event.eventCategoryId) : event.eventCategoryId != null)
+      return false;
+    if (eventCategoryName != null ? !eventCategoryName.equals(event.eventCategoryName) : event.eventCategoryName != null)
+      return false;
+    if (calendarId != null ? !calendarId.equals(event.calendarId) : event.calendarId != null) return false;
+    return eventType != null ? eventType.equals(event.eventType) : event.eventType == null;
+
+  }
+
+  @Override
+  public int hashCode() {
+    int result = eventCategoryId != null ? eventCategoryId.hashCode() : 0;
+    result = 31 * result + (eventCategoryName != null ? eventCategoryName.hashCode() : 0);
+    result = 31 * result + (calendarId != null ? calendarId.hashCode() : 0);
+    result = 31 * result + (eventType != null ? eventType.hashCode() : 0);
+    result = 31 * result + (isPrivate ? 1 : 0);
+    return result;
+  }
 }

@@ -276,4 +276,40 @@ public class CalendarSetting implements Serializable {
   public Calendar createCalendar(Date time) {
     return time != null ? createCalendar(time.getTime()) : null;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof CalendarSetting)) return false;
+
+    CalendarSetting that = (CalendarSetting) o;
+
+    if (timeInterval != that.timeInterval) return false;
+    if (isShowWorkingTime != that.isShowWorkingTime) return false;
+    if (viewType != null ? !viewType.equals(that.viewType) : that.viewType != null) return false;
+    if (weekStartOn != null ? !weekStartOn.equals(that.weekStartOn) : that.weekStartOn != null) return false;
+    if (dateFormat != null ? !dateFormat.equals(that.dateFormat) : that.dateFormat != null) return false;
+    if (timeFormat != null ? !timeFormat.equals(that.timeFormat) : that.timeFormat != null) return false;
+    if (timeZone != null ? !timeZone.equals(that.timeZone) : that.timeZone != null) return false;
+    if (baseURL != null ? !baseURL.equals(that.baseURL) : that.baseURL != null) return false;
+    if (workingTimeBegin != null ? !workingTimeBegin.equals(that.workingTimeBegin) : that.workingTimeBegin != null)
+      return false;
+    return workingTimeEnd != null ? workingTimeEnd.equals(that.workingTimeEnd) : that.workingTimeEnd == null;
+
+  }
+
+  @Override
+  public int hashCode() {
+    int result = viewType != null ? viewType.hashCode() : 0;
+    result = 31 * result + (int) (timeInterval ^ (timeInterval >>> 32));
+    result = 31 * result + (weekStartOn != null ? weekStartOn.hashCode() : 0);
+    result = 31 * result + (dateFormat != null ? dateFormat.hashCode() : 0);
+    result = 31 * result + (timeFormat != null ? timeFormat.hashCode() : 0);
+    result = 31 * result + (timeZone != null ? timeZone.hashCode() : 0);
+    result = 31 * result + (baseURL != null ? baseURL.hashCode() : 0);
+    result = 31 * result + (isShowWorkingTime ? 1 : 0);
+    result = 31 * result + (workingTimeBegin != null ? workingTimeBegin.hashCode() : 0);
+    result = 31 * result + (workingTimeEnd != null ? workingTimeEnd.hashCode() : 0);
+    return result;
+  }
 }
